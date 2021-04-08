@@ -1,0 +1,66 @@
+1.CMake la gi?
+Nó cung cấp tính năng sinh ra Makefile một cách hiệu quả. Nhất là đối với các dự án phức tạp. Nó cũng cung cấp thêm các bộ sinh khác để sinh cấu trúc quản lý source cho các IDE khác nhau như Project cho Visual Studio, etc.
+
+
+
+2.Viet example, thuc thi tren may tinh va tao git de up len GitHub
+
+2.1.Example 
+- Tao 1 folder ten Project: $ mkdir Project
+- Chuyen toi folder Project: $ cd Project
+- Tao file source .cpp: $ gedit Factorial.cpp
+- File su dung cho CMake la 1 file CMakeLists.txt
+- Thuc hien sinh ra Makefiles: $ cmake . -> tao ra cac file: CMakeCache.txt  cmake_install.cmake  Factorial.cpp  Makefile      CMakeFiles      CMakeLists.txt       main
+- Build Project: $ make
+- Excute source file: $ ./main
+
+2.2.Tao git de up len GitHub
+
+khanh@ubuntu:~/KhanhND_Project$ gedit CMakeLists.txt
+
+khanh@ubuntu:~/KhanhND_Project$ git init
+Initialized empty Git repository in /home/khanh/KhanhND_Project/.git/
+
+khanh@ubuntu:~/KhanhND_Project$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	CMakeLists.txt
+	Factorial.cpp
+
+nothing added to commit but untracked files present (use "git add" to track)
+khanh@ubuntu:~/KhanhND_Project$ git add .
+khanh@ubuntu:~/KhanhND_Project$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   CMakeLists.txt
+	new file:   Factorial.cpp
+
+khanh@ubuntu:~/KhanhND_Project$ git commit -m "KhanhND: Add 2 files"
+[master (root-commit) 6e5b638] KhanhND: Add 2 files
+ 2 files changed, 22 insertions(+)
+ create mode 100644 CMakeLists.txt
+ create mode 100644 Factorial.cpp
+
+khanh@ubuntu:~/KhanhND_Project$ git remote add origin https://github.com/Khanhnd24/KhanhND_Project.git
+
+khanh@ubuntu:~/KhanhND_Project$ git push origin master
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 529 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/Khanhnd24/KhanhND_Project.git
+ * [new branch]      master -> master
+
+
+
